@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <table name="test_table">
+        <column>id</column>
+        <column>label</column>
+        <row>
+            <value>1</value>
+            <value>expected.value.1</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>expected.value.2</value>
+        </row>
+    </table>
+</dataset>
