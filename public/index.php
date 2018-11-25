@@ -2,10 +2,10 @@
 
 $app = include(__DIR__ . '/../config/app.config.php');
 
-$app->get('/' , function($request , $response , $args){
+$app->get('/' , function($Request , $Response , $Args){
     
-    $actionResponse = $this->Controller->actionIndex($request , $response , $args);
-    $response->getBody()->write($actionResponse);
+    $result = $this->Controller->action($Request , $Response , $Args);
+    $Response->getBody()->write($result);
 });
 
 $app->run();

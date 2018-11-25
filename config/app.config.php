@@ -15,20 +15,12 @@ $app  = new \Slim\App([
 $appContainer = $app->getContainer();
 
 // 2 - Register "Controller" in Slim Container
-$appContainer['Controller'] = function($c) {
-    
-    // Build a new Dependency Container that will be injected in \App\Controller
-    $serviceContainer = new \Slim\Container;
+$appContainer['Controller'] = function($appContainer) {
 
-    // Register dependency factory
-    $serviceContainer['MyServiceName'] = function($myContainer) {        
-        return 'MyServiceInstance';
-    };
-
-    $configController = [];
-    $service = new \App\Controller($serviceContainer , $configController);
-
-    return $service;
+    $service = [];
+    $config  = [];
+    $controller = new \App\Controller($config , $service);
+    return $controller;
 };
 
 return $app;

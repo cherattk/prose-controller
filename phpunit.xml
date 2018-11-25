@@ -11,20 +11,8 @@
     
     <testsuites>
         <testsuite name="controller">
-            <directory suffix="Test.php">tests/app/controller</directory>
+            <directory suffix="Test.php">tests/app</directory>
         </testsuite>
     </testsuites>
-
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">src</directory>
-        </whitelist>
-    </filter>
-    
-<!--    <testsuites>
-        <testsuite name="one-service-unit">
-            <file suffix="Test.php">./tests</file>
-        </testsuite>
-    </testsuites>-->
     
 </phpunit>

@@ -1,25 +1,25 @@
 {
-    "name": "prose/prose-controller",
-    "description": "Controller boilerplate for Slim Framework v3.",
+    "name": "prose/slim-3-starter",
+    "description": "Project starter for Slim Framework v3.",
     "type":"project",
-    "keywords": ["controller", "service" , "boilerplate"],
-    "version" : "1.0.0",
+    "keywords": ["structure", "controller", "service" , "boilerplate"],
+    "version" : "1.1.0",
     "license": "MIT",
     "authors": [ { "name": "cheratt karim" } ],
     "require": {
-        "slim/slim": "3.9.2",
-        "psr/container":"^1.0"
+        "slim/slim": "3.9.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "7.1",
-        "phpunit/dbunit": "^4.0"
+        "phpunit/phpunit": "7.1"
     },
     "autoload" :{
-        "psr-0":{
-            "" : "src"
-        },
         "psr-4":{            
-            "Prose\\Tests\\" : "tests/dummy"
+            "App\\" : "src/App"
+        }
+    },
+    "autoload-dev" :{
+        "psr-4":{            
+            "Prose\\Test\\" : "tests/fixture"
         }
     }
 }

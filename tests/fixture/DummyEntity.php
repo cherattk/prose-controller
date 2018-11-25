@@ -1,5 +1,5 @@
 <?php
-namespace Prose\Tests;
+namespace Prose\Test;
 
 /**
  * @Entity 
@@ -21,12 +21,6 @@ class DummyEntity{
      * @Column(type="string") 
      */
     private $label = "";
-    
-    /**
-     * 
-     * @var string
-     */    
-    public $table = 'test_table';
     
     public function setId($id) {
         $this->id = $id;
