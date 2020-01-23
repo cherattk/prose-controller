@@ -1,5 +1,5 @@
 {
-    "name": "prose/slim-3-starter",
+    "name": "cherattk/slim-3-starter",
     "description": "Project starter for Slim Framework v3.",
     "type":"project",
     "keywords": ["structure", "controller", "service" , "boilerplate"],
