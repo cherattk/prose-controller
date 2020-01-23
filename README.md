@@ -1,8 +1,2 @@
-# prose/slim-3-starter
-Project starter for Slim Framework v3.
-
-### installation 
-```bash
-$ composer create-project prose/slim-3-starter project-name
-```
-
+# Project skeleton for slim framework v3
+Project skeleton for Slim Framework v3.
