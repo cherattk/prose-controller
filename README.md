@@ -1,2 +1,4 @@
-# Project skeleton for slim framework v3
-Project skeleton for Slim Framework v3.
+# Starter project for slim framework v3
+
+### Requirement
+- PHP >= 7.3 - required by PHPUnit-9
