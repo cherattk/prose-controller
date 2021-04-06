@@ -1,43 +1,46 @@
 <?php
-use PHPUnit\Framework\TestCase;
 
+use PHPUnit\Framework\TestCase;
 use App\Controller;
 
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Message\ResponseInterface      as Response;
+final class ControllerTest extends TestCase {
 
-final class ControllerTest extends TestCase{
+    public function testControllerAction() {
 
-    public function testGetConfiguration()
-    {
         $controller = new Controller();
+
+        $actual = $controller->action();
+
+        $this->assertEquals('action-method-returned-value', $actual, 'Something goes wrong');
+    }
+
+    
+    public function testGetConfiguration() {
+
+        $controllerConfig = ['config' => 'config.value'];
+        $dependency = [];
+
+        $controller = $controller = new Controller($controllerConfig , $dependency);
 
         $actual = $controller->getConfiguration();
-
-        $this->assertEquals([] , $actual , 'Something goes wrong');
+        $this->assertEquals($controllerConfig, $actual, 'test fail - keep calm and find the bug');
     }
 
-    public function testGetService()
-    {
-        $service = ['myService' => 'serviceInstance'];
+    public function testGetService() {
 
-        $controller = new Controller([] , $service);
+        $controllerConfig = [];
 
-        $actual = $controller->getService('myService');
+        $objectInstance = new stdClass;
+        $dependency = [
+            'MyDependencyObject' => $objectInstance
+        ];
 
-        $this->assertEquals('serviceInstance' , $actual , 'Something goes wrong');
-    }
+        $controller = new Controller($controllerConfig , $dependency);
 
-    public function testControllerAction()
-    {        
-        $request = $this->getMockForAbstractClass(Request::class);
-        $response = $this->getMockForAbstractClass(Response::class);
-        $args = [];
-
-        $controller = new Controller();
+        $actual = $controller->getService('MyDependencyObject');
+        $expected = $dependency['MyDependencyObject'];
         
-        $actual = $controller->action($request , $response , $args);
-
-        $this->assertEquals('Hello World!' , $actual , 'Something goes wrong');
+        $this->assertEquals($expected, $actual, 'test fail - keep calm and find the bug');
     }
+
 }
