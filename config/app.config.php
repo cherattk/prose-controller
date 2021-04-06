@@ -15,7 +15,7 @@ $app = new \Slim\App([
 $slimContainer = $app->getContainer();
 
 // 2 - Register "Controller" in Slim Container
-$appContainer['Controller'] = function($slimContainer) {
+$slimContainer['Controller'] = function($slimContainer) {
 
     $config = [];
     $service = [];

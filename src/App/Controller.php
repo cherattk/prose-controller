@@ -7,7 +7,7 @@ use Core\BaseController;
 class Controller extends BaseController {
 
     public function action() {
-        return "action-method-returned-value";
+        return "Hello World";
     }
 
 }
